@@ -1,0 +1,10 @@
+version: 3
+automerge: true
+workflows:
+ default:
+   plan:
+     steps:
+      - run: "echo custom plan"
+   apply:
+     steps:
+       - run: "echo custom apply"
