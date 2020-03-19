@@ -1,5 +1,12 @@
 version: 3
 automerge: true
+projects:
+- name: main
+  dir: .
+  autoplan:
+    when_modified: ["**/*"]
+    enabled: true
+  apply_requirements: [mergeable, approved]
 workflows:
  default:
    plan:
