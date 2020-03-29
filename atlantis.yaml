@@ -3,13 +3,13 @@ automerge: true
 projects:
 - dir: ./stg
   autoplan:
-    when_modified: ["*.json"]
+    when_modified: ["*.json", "../*.sh"]
     enabled: true
   apply_requirements: [mergeable]
   workflow: default
 - dir: ./prd
   autoplan:
-    when_modified: ["*.json"]
+    when_modified: ["*.json", "../*.sh"]
     enabled: true
   apply_requirements: [mergeable]
   workflow: default
@@ -17,8 +17,8 @@ workflows:
  default:
    plan:
      steps:
-      - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10_plan.sh"
+      - run: "../cc10_plan.sh"
       - run: "touch $PLANFILE"
    apply:
      steps:
-       - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10_apply.sh"
+       - run: "../cc10_apply.sh"
