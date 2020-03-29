@@ -17,7 +17,8 @@ workflows:
  default:
    plan:
      steps:
-      - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10.sh plan config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
+      - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10_plan.sh"
+      - run: "touch $PLANFILE"
    apply:
      steps:
-       - run: "echo custom apply"
+       - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10_apply.sh"
