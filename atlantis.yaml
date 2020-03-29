@@ -1,8 +1,8 @@
 version: 3
 automerge: true
 projects:
-- name: main
-  dir: .
+- name: stg
+  dir: stg
   autoplan:
     when_modified: ["**/*"]
     enabled: true
@@ -12,7 +12,7 @@ workflows:
  default:
    plan:
      steps:
-      - run: "echo custom plan"
+      - run: "/Users/elias.jordan/Desktop/atlantis-hack plan config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
    apply:
      steps:
        - run: "echo custom apply"
