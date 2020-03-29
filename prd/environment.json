@@ -1,0 +1,35 @@
+{
+  "revision": 0,
+  "project": {
+    "folder": 849716247185,
+    "billingAccount": "015675-C9DC1A-FE9B26",
+    "enabledServices": [],
+    "iam": {
+      "bindings": [
+        {
+          "role": "roles/owner",
+          "members": [
+            "group:team-paas@tapad.com"
+          ]
+        }
+      ]
+    },
+    "labels": {
+      "woop": "1"
+    }
+  },
+  "maintainer": {
+    "chartVersion": null,
+    "chartValues": {}
+  },
+  "state": {
+    "bundleVersion": "473",
+    "dependencies": [
+      "gcs/bucket/test"
+    ],
+    "values": {
+      "primary-location": "asia"
+    },
+    "mode": "ApiManaged"
+  }
+}

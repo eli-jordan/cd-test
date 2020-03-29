@@ -1,10 +1,15 @@
 version: 3
 automerge: true
 projects:
-- name: main
-  dir: .
+- dir: ./stg
   autoplan:
-    when_modified: ["**/*"]
+    when_modified: ["*.json"]
+    enabled: true
+  apply_requirements: [mergeable]
+  workflow: default
+- dir: ./prd
+  autoplan:
+    when_modified: ["*.json"]
     enabled: true
   apply_requirements: [mergeable]
   workflow: default
@@ -12,7 +17,7 @@ workflows:
  default:
    plan:
      steps:
-      - run: "echo custom plan"
+      - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10.sh plan config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
    apply:
      steps:
        - run: "echo custom apply"
