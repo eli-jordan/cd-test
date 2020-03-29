@@ -25,7 +25,6 @@
   "state": {
     "bundleVersion": "473",
     "dependencies": [
-      "gcs/bucket/test"
     ],
     "values": {
       "primary-location": "eu"
