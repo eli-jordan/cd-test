@@ -18,6 +18,7 @@ workflows:
    plan:
      steps:
       - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10.sh plan config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
+      - run: "touch $PLANFILE"
    apply:
      steps:
        - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10.sh deploy config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
