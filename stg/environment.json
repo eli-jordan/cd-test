@@ -28,7 +28,7 @@
       "gcs/bucket/test"
     ],
     "values": {
-      "primary-location": "asia"
+      "primary-location": "us"
     },
     "mode": "ApiManaged"
   }
