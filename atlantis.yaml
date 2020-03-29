@@ -20,4 +20,4 @@ workflows:
       - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10.sh plan config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
    apply:
      steps:
-       - run: "echo custom apply"
+       - run: "/Users/elias.jordan/Desktop/atlantis-hack/cc10.sh deploy config --environment-id=tapad-paas-eli-operator-test --config-file=environment.json"
