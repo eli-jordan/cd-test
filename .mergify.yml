@@ -1,0 +1,32 @@
+pull_request_rules:
+  - name: Automatic merge into staging
+    conditions:
+      - "base=cc10-staging"
+      - "status-success=cloudcre10-cd/plan"
+      - "status-success=cloudcre10-cd/deploy"
+      - "status-success=cloudcre10-cd/test"
+    actions:
+      merge:
+        method: merge
+  - name: delete head branch on merged pull requests
+    conditions:
+      - "base=cc10-staging"
+      - "merged"
+    actions:
+      delete_head_branch:
+        force: false
+  - name: Automatic merge into production
+    conditions:
+      - "base=cc10-production"
+      - "status-success=cloudcre10-cd/plan"
+      - "status-success=cloudcre10-cd/deploy"
+    actions:
+      merge:
+        method: merge
+  - name: delete head branch on merged pull requests
+    conditions:
+      - "base=cc10-production"
+      - "merged"
+    actions:
+      delete_head_branch:
+        force: false
